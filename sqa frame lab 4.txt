@@ -1,0 +1,46 @@
+package assignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class frames 
+{
+	public static void main(String args[]) throws InterruptedException
+	{
+		System.setProperty(
+			"webdriver.chrome.driver", "C:\\Users\\4077\\Desktop\\SQA tools\\chromedriver_win32\\chromedriver.exe");
+		 WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+	
+	 driver.get("https://www.way2automation.com/way2auto_jquery/frames-and-windows.php");
+	 Thread.sleep(2000);
+	 driver.findElement(By.xpath("//a[@href='frames-and-windows.php']")).click();
+	 Thread.sleep(2000);
+	 driver.findElement(By.xpath("//a[@href='#example-1-tab-1']")).click();
+	 driver.switchTo().frame(0);
+	 driver.findElement(By.xpath("//a[text()='New Browser Tab']")).click();
+	 Thread.sleep(2000);
+	 String MainWindow=driver.getWindowHandle();
+	 driver.switchTo().window(MainWindow);
+	 driver.findElement(By.xpath("//a[@href='#example-1-tab-2']")).click();
+	 driver.switchTo().frame(1);
+	 driver.findElement(By.linkText("Open New Seprate Window")).click();
+	 Thread.sleep(2000);
+	 driver.switchTo().window(MainWindow);
+	 driver.findElement(By.xpath("//a[@href='#example-1-tab-3']")).click();
+	 driver.switchTo().frame(2);
+	 driver.findElement(By.xpath("//a[text()='Open Frameset Window']")).click();
+	 Thread.sleep(2000);
+	 driver.switchTo().window(MainWindow);
+	 driver.findElement(By.xpath("//a[@href='#example-1-tab-4']")).click();
+	 driver.switchTo().frame(3);
+	 driver.findElement(By.xpath("//a[text()='Open multiple pages']")).click();
+	 
+	 driver.quit();
+}
+	
+}

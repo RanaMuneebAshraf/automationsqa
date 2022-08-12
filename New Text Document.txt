@@ -1,0 +1,117 @@
+package assignment;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class assignment
+{
+	public static void main(String args[])
+	{
+		System.setProperty(
+			"webdriver.chrome.driver", "C:\\Users\\4077\\Desktop\\SQA tools\\chromedriver_win32\\chromedriver.exe");
+		 WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.way2automation.com/");
+		
+		WebElement link_Home = driver.findElement(By.xpath("//li[contains(@id,'menu-item-27580')]//descendant::span[text()='All Courses']"));
+		
+		Actions allcourses = new Actions(driver);
+		Action mouseovercourses = allcourses.moveToElement(link_Home).build();
+		mouseovercourses.perform();
+		 try {
+	            Thread.sleep(1000);
+	        } catch (InterruptedException e) {}
+		
+		WebElement drpdown = driver.findElement(By.xpath("//li[contains(@id,'menu-item-27580')]//descendant::span[text()='Selenium']"));
+				
+		Actions sel = new Actions(driver);
+		Action mouseovercoursess = sel.moveToElement(drpdown).build();
+		mouseovercoursess.perform();
+			   try {
+		            Thread.sleep(1000);
+		        } catch (InterruptedException e) {}
+			   
+	   
+		WebElement drpdownofdrp = driver.findElement(By.xpath("//li[contains(@id,'menu-item-27583')]//descendant::span[text()='Selenium with Java']"));
+				
+		Actions jav = new Actions(driver);
+		Action mouseovercoursesss = jav.click(drpdownofdrp).build();
+		mouseovercoursesss.perform();	   	
+			   
+		   
+			   
+		
+	}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+task2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package assign4;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.concurrent.TimeUnit;
+public class assign4
+{
+	public static void main(String args[])
+	{
+		System.setProperty(
+			"webdriver.chrome.driver", "C:\\Users\\4077\\Desktop\\SQA tools\\chromedriver_win32\\chromedriver.exe");
+		 WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://sso.teachable.com/secure/673/identity/login");
+		driver.findElement(By.xpath("//*[text()='Sign Up']")).click();
+		 try {
+	            Thread.sleep(1000);
+	        } catch (InterruptedException e) {}
+		
+		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("abc");
+		driver.findElement(By.xpath("//input[@type='email']")).sendKeys("abcdefg@gmail.com");
+		driver.findElement(By.xpath("//input[@type='password']")).sendKeys("abcdef");
+		driver.findElement(By.xpath("//input[@type='checkbox']")).click();
+		try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {}
+		driver.findElement(By.xpath("//input[@type='submit']")).click();
+		
+		
+	}}
+		
